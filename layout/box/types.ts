@@ -1,9 +1,9 @@
-import { ReactNode } from 'react';
-import type { ComponentType } from '../../core/types/componentType';
+import { ReactNode } from 'react'
+import type { ComponentType } from '../../core/types/componentType'
 
 export type DsBoxType = {
-    children?: ReactNode;
-    onMouseEnter?: React.MouseEventHandler<HTMLTextAreaElement>;
-    onMouseLeave?: React.MouseEventHandler<HTMLTextAreaElement>;
-    onClick?: () => void;
-} & ComponentType;
+  children?: ReactNode
+  onMouseEnter?: React.MouseEventHandler<HTMLTextAreaElement>
+  onMouseLeave?: React.MouseEventHandler<HTMLTextAreaElement>
+  onClick?: React.MouseEventHandler<HTMLDivElement>
+} & ComponentType

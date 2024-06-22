@@ -1,24 +1,26 @@
-import { forwardRef } from 'react';
+/* eslint-disable react/display-name */
+/* eslint-disable react/react-in-jsx-scope */
+import { forwardRef } from 'react'
 
-import type { DsFlexType } from './types';
+import type { DsFlexType } from './types'
 
-import ComponentMounter from '../../core/utils/component-mounter';
+import ComponentMounter from '../../core/utils/component-mounter'
 
 const DsFlex: React.FC<DsFlexType> = forwardRef((props, ref) => {
-    const { children, ...attr } = props;
-    const { align, justify, wrap, direction } = attr;
+  const { children, ...attr } = props
+  const { align, justify, wrap, direction } = attr
 
-    attr.display = attr.display || 'flex';
-    attr.alignItems = align || attr.alignItems;
-    attr.justifyContent = justify || attr.justifyContent;
-    attr.flexWrap = wrap || attr.flexWrap;
-    attr.flexDirection = direction || attr.flexDirection;
+  attr.display = attr.display || 'flex'
+  attr.alignItems = align || attr.alignItems
+  attr.justifyContent = justify || attr.justifyContent
+  attr.flexWrap = wrap || attr.flexWrap
+  attr.flexDirection = direction || attr.flexDirection
 
-    return (
-        <ComponentMounter as={attr.as || 'div'} ref={ref} {...attr}>
-            {children}
-        </ComponentMounter>
-    );
-});
+  return (
+    <ComponentMounter as={attr.as || 'div'} ref={ref} {...attr}>
+      {children}
+    </ComponentMounter>
+  )
+})
 
-export default DsFlex;
+export default DsFlex

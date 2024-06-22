@@ -1,29 +1,34 @@
-import { forwardRef } from 'react';
-import type { DsInputType } from './types';
+import ComponentMounter from '@ds/core/utils/component-mounter'
 
-import InputText from './text-input';
-import InputDate from './date-input';
-import InputNumber from './number-input';
-import InputPassword from './password-input';
+//types
+import type { DsInputType } from './types'
 
-const DsInput: React.FC<DsInputType> = forwardRef((props, ref) => {
-    const { children, ...attr } = props;
+const DsInput: React.FC<DsInputType> = props => {
+  const { forwardedRef, ...attr } = props
+  const forceTypeText = { ...attr, type: 'text' }
 
-    return (
-        <>
-            {attr.type === 'text' || attr.type === 'search' ? (
-                <InputText forwardedRef={ref} {...attr} />
-            ) : attr.type === 'date' ? (
-                <InputDate forwardedRef={ref} {...attr} />
-            ) : attr.type === 'number' ? (
-                <InputNumber forwardedRef={ref} {...attr} />
-            ) : attr.type === 'password' ? (
-                <InputPassword forwardedRef={ref} {...attr} />
-            ) : (
-                <span style={{ margin: 10 }}>type currently not supported</span>
-            )}
-        </>
-    );
-});
+  return (
+    <ComponentMounter
+      as="input"
+      ref={forwardedRef}
+      placeholder={attr?.placeholder}
+      value={attr?.value}
+      color="var(--lavenderPurple)"
+      fontFamily="var(--secondaryFont)"
+      fontSize="16px"
+      fontWeight="400"
+      lineHeight="normal"
+      _css={{
+        sm: `
+          &::-webkit-input-placeholder { 
+            color: ${attr?.color || 'var(--lavenderPurple)'} 
+          };
+        `
+      }}
+      {...forceTypeText}
+      {...attr}
+    />
+  )
+}
 
-export default DsInput;
+export default DsInput

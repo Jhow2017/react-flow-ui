@@ -1,0 +1,50 @@
+import * as Icons from './components'
+import { DsIconSvgType, IconProps } from './types'
+
+//@ts-ignore
+export const ICONS: Record<
+  DsIconSvgType,
+  React.ComponentType<IconProps> | undefined
+> = {
+  'chevron-up': Icons?.ChevronUpIcon,
+  'arrow-left': Icons?.ArrowLeftIcon,
+  'arrow-right': Icons?.ArrowRightIcon,
+  close: Icons?.CloseIcon,
+  'calendar-range-outline': Icons?.CalendarRangeOutlineIcon,
+  fire: Icons?.FireIcon,
+  'calendar-check-outline': Icons?.CalendarCheckOutlineIcon,
+  share: Icons?.ShareIcon,
+  search: Icons?.SearchIcon,
+  more: Icons?.MoreIcon,
+  'add-reaction': Icons?.addReactionIcon,
+  comment: Icons?.CommentIcon,
+  'share-flat': Icons?.ShareFatIcon,
+  blush: Icons?.BlushIcon,
+  surprised: Icons?.SurprisedIcon,
+  'sweat-grinning': Icons?.SweatGrinningIcon,
+  cool: Icons?.CoolIcon,
+  sleepy: Icons?.SleepyIcon,
+  'crying-with-laughter': Icons?.CryingWithLaughterIcon,
+  'heart-eyes': Icons?.HeartEyesIcon,
+  'smile-eyes': Icons?.SmileEyesIcon,
+  chats: Icons?.ChatsIcon,
+  heart: Icons?.HeartIcon,
+  gallery: Icons?.GalleryIcon,
+  gif: Icons?.GifIcon,
+  smily: Icons?.SmilyIcon,
+  house: Icons?.HouseIcon,
+  bell: Icons?.BellIcon,
+  'plus-solid-icon': Icons?.PlusSolidIcon,
+  'comment-dots': Icons?.CommentDotsIcon,
+  like: Icons?.LikeIcon,
+  'comment-social': Icons?.CommentSocialIcon,
+  'user-plus': Icons?.UserPlusIcon,
+  settings: Icons?.SettingsIcon,
+  edit: Icons?.EditIcon,
+  send: Icons?.SendIcon,
+  camera: Icons?.CameraIcon,
+  'chevron-left': Icons?.ChevronLeftIcon,
+  delete: Icons?.DeleteIcon,
+  check: Icons?.CheckIcon,
+  users: Icons?.UsersIcon
+}

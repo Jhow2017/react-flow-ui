@@ -1,19 +1,19 @@
-import { breakpoints } from '../../config';
+import { breakpoints } from '../../config'
 
-import type { BreakpointProps } from '../../config';
+import type { BreakpointProps } from '../../config'
 
 const generateCustomCss = (_css: BreakpointProps<string>): string => {
-    let styles = '';
+  let styles = ''
 
-    for (const breakpoint in _css) {
-        styles += `
+  for (const breakpoint in _css) {
+    styles += `
             @media (min-width: ${breakpoints[breakpoint]}) {
                 ${_css[breakpoint]}
             }
-        `;
-    }
+        `
+  }
 
-    return styles;
-};
+  return styles
+}
 
-export default generateCustomCss;
+export default generateCustomCss
